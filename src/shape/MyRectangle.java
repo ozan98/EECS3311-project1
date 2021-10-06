@@ -3,17 +3,17 @@ package shape;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.Random;
+
 
 
 
 public class MyRectangle implements Comparable <Shape>, Shape{
 
-	protected int upperX; 
-	protected int upperY;
-	protected int width;
-	protected int height;
-	protected Color shapeColor;
+	private int upperX; 
+	private int upperY;
+	private int width;
+	private int height;
+	private Color shapeColor;
 	
 	/**
 	 * Class's constructor
@@ -23,16 +23,12 @@ public class MyRectangle implements Comparable <Shape>, Shape{
 	 * @param height
 	 * @param shapeColor
 	 */
-	public MyRectangle () {
-		Random rand = new Random();
-        int upperBound = 200;
-		this.upperX = rand.nextInt(upperBound);
-		this.upperY = rand.nextInt(upperBound);
-		this.width = rand.nextInt(upperBound);
-		this.height = rand.nextInt(upperBound);
-		this.shapeColor = new Color(rand.nextInt(upperBound),
-                                rand.nextInt(upperBound),
-                                rand.nextInt(upperBound));
+	public MyRectangle (int upperX, int upperY, int width, int height, Color shapeColor) {
+		this.upperX = upperX;
+		this.upperY = upperY;
+		this.width = width;
+		this.height = height;
+		this.shapeColor = shapeColor;
 	}
 	
 
