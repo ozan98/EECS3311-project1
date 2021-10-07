@@ -35,7 +35,12 @@ public class MyRectangle implements Comparable <Shape>, Shape{
 
 	@Override
 	public int compareTo(Shape o) {
-		// TODO write the right Java code here to support the comparison
+		if(this.getArea() > o.getArea()){
+			return 1;
+		}
+		if(this.getArea() < o.getArea()){
+			return -1;
+		}
 		return 0;
 	}
 	

@@ -21,7 +21,13 @@ public class MySquare implements Comparable <Shape>, Shape {
 
     @Override
     public int compareTo(Shape o){
-        return 0;
+        if(this.getArea() > o.getArea()){
+			return 1;
+		}
+		if(this.getArea() < o.getArea()){
+			return -1;
+		}
+		return 0;
     }
 
     /**

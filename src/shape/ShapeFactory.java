@@ -18,11 +18,11 @@ public class ShapeFactory {
         randDim = new Random();
         randColor = new Random();
         shapeList = new ArrayList<Shape>();
-        createShapes();
+        // createShapes();
     }
 
 
-    private void createShapes(){
+    public void createShapes(){
         int shapeIdentity;
         int upperX = 20;
         int upperY = 20;
@@ -45,6 +45,10 @@ public class ShapeFactory {
 
     public List<Shape> getShapeList(){
         return this.shapeList;
+    }
+    
+    public void resetShapes(){
+        this.shapeList.clear();
     }
 
     //helper methods

@@ -20,8 +20,13 @@ public class MyCircle implements Comparable <Shape>, Shape{
 
     @Override
     public int compareTo(Shape o){
-        //TODO write the right jave code here to support campareTO
-        return 0;
+        if(this.getArea() > o.getArea()){
+			return 1;
+		}
+		if(this.getArea() < o.getArea()){
+			return -1;
+		}
+		return 0;
     }
 
     /**
