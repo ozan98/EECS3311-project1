@@ -1,42 +1,41 @@
 package shape;
 
-import java.awt.Color;
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.event.*;
 
+
 public class MyPanel extends JPanel implements ActionListener {
 
    JButton loadButton;
+   JButton sortButton;
    ShapeFactory shapes = new ShapeFactory();
+   
 
    MyPanel(){
       
-      JFrame frame = new JFrame("Display two shapes (rectangles)");
+      JFrame frame = new JFrame("Sorting Shapes");
       loadButton = new JButton("Load");
       loadButton.setBounds(200, 10, 100, 25);
       loadButton.addActionListener(this);
       frame.add(loadButton);
+
+      sortButton = new JButton("Sort");
+      sortButton.setBounds(300, 10, 100, 25);
+      sortButton.addActionListener(this);
+      frame.add(sortButton);
+      
+
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.add(this);
       frame.setSize(600, 600);
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
    }
-
-   
-	
-	
-	// private List<Shape> createTwoRectangles(){
-   //    ShapeFactory shapes = new ShapeFactory();
-	// 	return shapes.getShapeList();
-	// }
 
    
 	
@@ -72,7 +71,21 @@ public class MyPanel extends JPanel implements ActionListener {
       if(e.getSource() == loadButton){
          shapes.resetShapes();
          shapes.createShapes();
+         for(Shape shape: shapes.getShapeList()){
+            System.out.println(shape.getArea() + " " + shape.getShapeName());
+         }
+         System.out.println("~~~~~~~~~~~~~~~~~~~~~");
          repaint();
+      }
+      if(e.getSource() == sortButton){
+         shapes.sortShapes();
+         repaint();
+         for(Shape shape: shapes.getShapeList()){
+            System.out.println(shape.getArea() + " " + shape.getShapeName());
+         }
+         
+         
+
       }
       
    }

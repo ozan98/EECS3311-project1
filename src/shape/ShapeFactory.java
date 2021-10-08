@@ -11,6 +11,7 @@ public class ShapeFactory {
     private Random randShape;
     private Random randDim;
     private Random randColor;
+    private ShapeInsertionSort sortShape;
 
 
     public ShapeFactory(){
@@ -18,6 +19,7 @@ public class ShapeFactory {
         randDim = new Random();
         randColor = new Random();
         shapeList = new ArrayList<Shape>();
+        sortShape = new ShapeInsertionSort();
         // createShapes();
     }
 
@@ -49,6 +51,16 @@ public class ShapeFactory {
     
     public void resetShapes(){
         this.shapeList.clear();
+    }
+
+    public void sortShapes(){
+        List<Shape> tempShapeList = new ArrayList<Shape>(this.shapeList);
+        resetShapes();
+        for (Shape shape : sortShape.sort(tempShapeList)){
+            this.shapeList.add(shape);
+        }
+        
+
     }
 
     //helper methods

@@ -49,6 +49,25 @@ public class MyCircle implements Comparable <Shape>, Shape{
 		return this.shapeColor;
 	}
 
+    //getters
+	public int getX(){
+		return this.upperX;
+	}
+
+	public int getY(){
+		return this.upperY;
+	}
+
+    public String getShapeName(){
+        return "circle";
+    }
+
+	//setters
+	public void setCord(int x, int y){
+		this.upperX = x;
+		this.upperY = y;
+	}
+
 
     
 }

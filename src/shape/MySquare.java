@@ -44,4 +44,23 @@ public class MySquare implements Comparable <Shape>, Shape {
     public Color getColor(){
 		return this.shapeColor;
 	}
+
+	//getters
+	public int getX(){
+		return this.upperX;
+	}
+
+	public int getY(){
+		return this.upperY;
+	}
+
+	public String getShapeName(){
+		return "square";
+	}
+
+	//setters
+	public void setCord(int x, int y){
+		this.upperX = x;
+		this.upperY = y;
+	}
 }
