@@ -45,10 +45,6 @@ public class MyPanel extends JPanel implements ActionListener {
    public void paintComponent(Graphics g) {
       super.paintComponent(g);
       Graphics2D g2d = (Graphics2D) g;
-
-      //calling the method that creates two shapes (rectangles)
-      // List<Shape> shapeList = createTwoRectangles();
-      // shapes.getShapeList();
       
       for (Shape shape: shapes.getShapeList()) {
     	  g2d.setColor(shape.getColor());

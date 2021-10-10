@@ -55,7 +55,7 @@ public class MyRectangle implements Comparable <Shape>, Shape{
     
 	public double getArea(){
 		
-		return (double) width * (double) height;
+		return (double) (width * height);
 	}
 
 	public Color getColor(){

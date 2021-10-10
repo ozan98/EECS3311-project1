@@ -35,7 +35,7 @@ public class ShapeFactory {
             if(shapeIdentity == 0){
                 shapeList.add(new MyRectangle(upperX, upperY, setDim(), setDim(), setColor()));
             }else if(shapeIdentity == 1){
-                shapeList.add(new MyCircle(upperX, upperY, setDim(), setColor()));
+                shapeList.add(new MyCircle(upperX, upperY, setRadius(), setColor()));
             }else{
                 int squareDIM = setDim();
                 shapeList.add(new MySquare(upperX, upperY, squareDIM, squareDIM, setColor()));
@@ -69,7 +69,13 @@ public class ShapeFactory {
         int lowerBound = 20;
 
         return randDim.nextInt(upperBound - lowerBound) + lowerBound;
+    }
+
+    private int setRadius(){
+        int upperBound = 30;
+        int lowerBound = 15;
         
+        return randDim.nextInt(upperBound - lowerBound) + lowerBound;
     }
 
     private Color setColor(){

@@ -34,17 +34,14 @@ public class MyCircle implements Comparable <Shape>, Shape{
 	 * @param form
 	 */
 	public  void drawShape(Graphics	form) {
-        int newX = this.upperX - (this.radius / 2);
-        int newY = this.upperY - (this.radius / 2);
-        
-		form.fillOval(newX, newY, this.radius, this.radius);
+		form.fillOval(upperX, upperY, 2 * this.radius, 2 * this.radius );
 	}
 
     
     public double getArea(){
-		
 		return Math.PI * (double)(this.radius * this.radius);
 	}
+    
     public Color getColor(){
 		return this.shapeColor;
 	}
