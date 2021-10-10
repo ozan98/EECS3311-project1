@@ -5,12 +5,12 @@ import java.awt.Graphics;
 
 
 public interface Shape{
-     double getArea();
-     Color getColor();
-     void drawShape(Graphics form);
-     int compareTo(Shape o);
-     int getX();
-     int getY();
-     void setCord(int x, int y);
-     String getShapeName();
+     public double getArea();
+     public Color getColor();
+     public void drawShape(Graphics form);
+     public int compareTo(Shape o);
+     public int getX();
+     public int getY();
+     public void setCord(int x, int y);
+     public String getShapeName();
 }

@@ -11,12 +11,13 @@ import java.awt.event.*;
 
 public class MyPanel extends JPanel implements ActionListener {
 
-   JButton loadButton;
-   JButton sortButton;
-   ShapeFactory shapes = new ShapeFactory();
+   private JButton loadButton;
+   private JButton sortButton;
+   private ShapeFactory shapes = new ShapeFactory();
+   private static MyPanel panel = new MyPanel();
    
 
-   MyPanel(){
+   private MyPanel(){
       
       JFrame frame = new JFrame("Sorting Shapes");
       loadButton = new JButton("Load");
@@ -35,6 +36,10 @@ public class MyPanel extends JPanel implements ActionListener {
       frame.setSize(600, 600);
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
+   }
+   
+   public static MyPanel getIntance(){
+      return panel;
    }
 
    
@@ -67,6 +72,8 @@ public class MyPanel extends JPanel implements ActionListener {
       if(e.getSource() == loadButton){
          shapes.resetShapes();
          shapes.createShapes();
+         
+         System.out.println("new shapes");
          for(Shape shape: shapes.getShapeList()){
             System.out.println(shape.getArea() + " " + shape.getShapeName());
          }
@@ -76,6 +83,7 @@ public class MyPanel extends JPanel implements ActionListener {
       if(e.getSource() == sortButton){
          shapes.sortShapes();
          repaint();
+         System.out.println("sorted shapes");
          for(Shape shape: shapes.getShapeList()){
             System.out.println(shape.getArea() + " " + shape.getShapeName());
          }
