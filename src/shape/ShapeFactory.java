@@ -11,7 +11,7 @@ public class ShapeFactory {
     private Random randShape;
     private Random randDim;
     private Random randColor;
-    private ShapeInsertionSort sortShape;
+    private ShapeSelectionSort sortShape;
 
 
     public ShapeFactory(){
@@ -19,7 +19,7 @@ public class ShapeFactory {
         randDim = new Random();
         randColor = new Random();
         shapeList = new ArrayList<Shape>();
-        sortShape = new ShapeInsertionSort();
+        sortShape = new ShapeSelectionSort();
         // createShapes();
     }
 
